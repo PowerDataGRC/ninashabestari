@@ -1,0 +1,28 @@
+site_name: Nina Shabestari
+site_description: Mechanical Engineering Portfolio
+site_author: Nina Shabestari
+site_url: https://ninashabestari.com/
+
+nav:
+  - Home: index.md
+  - Projects: projects.md
+  - Resources: resources.md
+  - Contact: contact.md
+
+theme:
+  name: mkdocs
+  custom_dir: overrides
+
+extra_css:
+  - css/extra.css
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+  - tables
+  - fenced_code
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search
