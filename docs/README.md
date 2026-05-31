@@ -37,7 +37,7 @@ In the repository settings, add these secrets (select the repo -> Settings -> Se
 - FTP_USERNAME
 - FTP_PASSWORD
   
-[GitHub Secrets](docs/images/Git_secrets.png)
+![GitHub Secrets](/docs/images/Git_secrets.png)
 ## Front matter
 Each page starts with metadata like this:
 
