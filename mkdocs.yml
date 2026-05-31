@@ -11,7 +11,7 @@ nav:
 
 theme:
   name: mkdocs
-  custom_dir: overrides
+  # custom_dir: overrides
 
 extra_css:
   - css/extra.css
