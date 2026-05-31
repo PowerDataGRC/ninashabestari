@@ -3,9 +3,12 @@ title: Home
 ---
 
 <div class="hero-banner">
-  <div class="hero-name">Nina Shabestari</div>
-  <div class="hero-title">Mechanical Engineering Graduate</div>
-  <div class="hero-subtitle">Design • Analysis • Problem Solving • Documentation</div>
+  <img src="images/Nina_logo.png" class="hero-logo" alt="Nina Shabestari">
+  <div class="hero-copy">
+    <div class="hero-name">Nina Shabestari</div>
+    <div class="hero-title">Mechanical Engineering Graduate</div>
+    <div class="hero-subtitle">Design • Analysis • Problem Solving • Documentation</div>
+  </div>
 </div>
 
 <div class="resume-grid">
@@ -13,7 +16,7 @@ title: Home
     <section class="resume-card left-card">
       <h2>Contact Info</h2>
       <ul>
-        <li>Email: <a href="mailto:nina@example.com">nina@example.com</a></li>
+        <li>Email: <a href="mailto:hello@ninashabestari.com.com">Contact me</a></li>
         <li>Phone: (555) 555-5555</li>
         <li>LinkedIn: <a href="https://linkedin.com/in/yourname">linkedin.com/in/yourname</a></li>
         <li>Location: Rochester, MN</li>
