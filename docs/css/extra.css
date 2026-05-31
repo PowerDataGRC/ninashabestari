@@ -148,6 +148,13 @@ body {
     color: var(--navy);
 }
 
+/* Logo sizing in the sticky nav header */
+.navbar-brand img {
+    max-height: 38px;
+    width: auto;
+    vertical-align: middle;
+}
+
 @media (max-width: 900px) {
     .resume-grid {
         grid-template-columns: 1fr;

@@ -19,13 +19,22 @@ jobs:
           python-version: '3.12'
 
       - name: Install MkDocs
-        run: |
-          pip install mkdocs
+        run: pip install mkdocs
 
       - name: Build site
         run: mkdocs build --strict
 
-      - name: Upload to Hostinger via FTP
+      - name: Generate PHP config
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          TURNSTILE_SECRET: ${{ secrets.TURNSTILE_SECRET }}
+        run: |
+          mkdir -p private
+          printf '<?php\ndefine("SMTP_USER", "%s");\ndefine("SMTP_PASS", "%s");\ndefine("TURNSTILE_SECRET", "%s");\n' \
+            "$SMTP_USER" "$SMTP_PASS" "$TURNSTILE_SECRET" > private/config.php
+
+      - name: Upload site to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -33,4 +42,14 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: site/
           server-dir: /public_html/
+          dangerous-clean-slate: false
+
+      - name: Upload PHP config outside web root
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: private/
+          server-dir: /private/
           dangerous-clean-slate: false
